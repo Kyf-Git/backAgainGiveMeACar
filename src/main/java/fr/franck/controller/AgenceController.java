@@ -31,7 +31,7 @@ public class AgenceController {
     
 
     //Ajouter une agence.
-    @PostMapping("/agences/ajouter")
+    @PostMapping("/agences")
     @ResponseBody // récupération du json
     public String ajouterAgence(@RequestBody Agence agence){
         agenceService.ajouterAgence(agence);
