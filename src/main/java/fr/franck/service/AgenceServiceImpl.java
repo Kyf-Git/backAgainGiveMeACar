@@ -16,16 +16,25 @@ public class AgenceServiceImpl implements AgenceService {
 	private AgenceRepository agenceRepository;
 	
 	//Requete GET
+	@Override
+	public Optional<Agence> findById (Long id) {
+		return agenceRepository.findById(id);
+	}
+	
+	//Requete GET
     @Override
-    public List<Agence> listAllAgence() {
-        return agenceRepository.findAll();
+    public List<Agence> findAll(String search) {
+        if(! "".equals(search))
+        	return agenceRepository.findByNomContaining(search);
+        else
+        	return agenceRepository.findAll();
     }
     
     //Requete POST
     @Override
-    public Agence ajouterAgence(Agence agence) {
-        Agence agenceAajouter = agenceRepository.save(agence);
-        return agenceAajouter;
+    public Agence addAgence(Agence agence) {
+        Agence addingAgence = agenceRepository.save(agence);
+        return addingAgence;
     }
     
     //Sans cette méthode, la requete PUT et DELETE genere une erreur.
@@ -47,9 +56,9 @@ public class AgenceServiceImpl implements AgenceService {
     //Requete DELETE
     @Override
     public Agence deleteAgence(Long id) {
-        Optional<Agence> optionalAgence = this.getAgence(id);
-        if(optionalAgence.isPresent()){
-           agenceRepository.delete(optionalAgence.get());
+        Optional<Agence> agence = this.findById(id);
+        if(agence.isPresent()){
+           agenceRepository.delete(agence.get());
         }
         return null;
     }

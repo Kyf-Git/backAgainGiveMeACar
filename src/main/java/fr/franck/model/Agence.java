@@ -18,7 +18,7 @@ public class Agence {
 	
     //permet de référencer l'adresse de l'autre coté
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="id")
+    @JoinColumn(name="adresse_id_adresse")
     private Adresse adresse;
 
 	

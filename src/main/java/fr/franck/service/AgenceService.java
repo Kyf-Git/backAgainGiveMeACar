@@ -11,10 +11,13 @@ import fr.franck.model.Agence;
 public interface AgenceService {
 	
 	//Requete GET
-    List<Agence> listAllAgence();
+	Optional<Agence> findById(Long id);
+	
+	//Requete GET
+    List<Agence> findAll(String search);
     
     //Requete POST
-    Agence ajouterAgence(Agence agence);
+    Agence addAgence(Agence agence);
     
     //Sans cette méthode, la requete PUT et DELETE genere une erreur.
     Optional<Agence> getAgence(Long id);
