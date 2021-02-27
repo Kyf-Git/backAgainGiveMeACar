@@ -20,7 +20,7 @@ public interface AgenceService {
     Agence addAgence(Agence agence);
     
     //Sans cette méthode, la requete PUT et DELETE genere une erreur.
-    Optional<Agence> getAgence(Long id);
+    //Optional<Agence> getAgence(Long id);
     
     //Requete PUT
     Agence updateAgence(Long id, Agence agence);

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.franck.model.Agence;
@@ -39,7 +38,7 @@ public class AgenceController {
     	return ResponseEntity.ok().body(agence.get());
     }
     
-    //Lister les agences par leur ID.
+    //Lister les agences.
     @CrossOrigin
     @GetMapping("/agences")
     public ResponseEntity<List<Agence>> getAllAgences(@RequestParam(value = "search", defaultValue = "")String search) {

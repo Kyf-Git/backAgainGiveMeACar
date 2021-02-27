@@ -14,11 +14,12 @@ public class Agence {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)//Permet de créer un nouvel ID à chaque nouvelle Agence créée
 	private Long id;
+	
 	private String nom;
 	
     //permet de référencer l'adresse de l'autre coté
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="adresse_id_adresse")
+    @JoinColumn(name="adresse_id")
     private Adresse adresse;
 
 	

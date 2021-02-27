@@ -38,15 +38,15 @@ public class AgenceServiceImpl implements AgenceService {
     }
     
     //Sans cette méthode, la requete PUT et DELETE genere une erreur.
-    @Override
-    public Optional<Agence> getAgence(Long id) {
-        return agenceRepository.findById(id);
-    }
+    //@Override
+    //public Optional<Agence> getAgence(Long id) {
+    //    return agenceRepository.findById(id);
+    //}
     
     //Requete PUT
     @Override
     public Agence updateAgence(Long id, Agence agence) {
-        Optional<Agence> optionalAgence = this.getAgence(id);
+        Optional<Agence> optionalAgence = this.findById(id);
         if(optionalAgence.isPresent()){
             return agenceRepository.save(agence);
         }
