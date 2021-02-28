@@ -10,6 +10,6 @@ import fr.franck.model.Agence;
 @Repository
 public interface AgenceRepository extends JpaRepository<Agence, Long> {
 
-	List<Agence> findByNomContaining(String nom);
+	public List<Agence> findByNomContaining(String nom);
 	
 }

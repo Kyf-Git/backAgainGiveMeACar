@@ -41,7 +41,7 @@ public class AgenceController {
     //Lister les agences.
     @CrossOrigin
     @GetMapping("/agences")
-    public ResponseEntity<List<Agence>> getAllAgences(@RequestParam(value = "search", defaultValue = "")String search) {
+    public ResponseEntity<List<Agence>> getAllAgences(@RequestParam(value = "search", defaultValue = "") String search) {
     	List<Agence> listAgence;
     	try {
     		listAgence = agenceService.findAll(search);

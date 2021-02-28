@@ -8,6 +8,7 @@ import fr.franck.model.Vehicule;
 
 public interface VehiculeRepository extends JpaRepository<Vehicule, Long> {
 	
-	List<Vehicule> findAll();
+	public List<Vehicule> findByModeleContaining(String modele);
+	public List<Vehicule> findByAgenceId(Long id);
 
 }
