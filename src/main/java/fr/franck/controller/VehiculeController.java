@@ -78,7 +78,7 @@ public class VehiculeController {
 	}
 	
 	@CrossOrigin
-	@DeleteMapping("/vehicule/{id}")
+	@DeleteMapping("/vehicules/{id}")
 	ResponseEntity<Vehicule> deleteVehicule(@PathVariable(value = "id") Long id) {
 		Optional<Vehicule> vehicule = vehiculeService.findById(id);
 		if(vehicule.isEmpty())

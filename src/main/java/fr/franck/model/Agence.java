@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-//import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Agence {
@@ -29,7 +29,7 @@ public class Agence {
 
     //permet de référencer les vehicules.
     @OneToMany(mappedBy="agence")
-    //@JsonBackReference
+	@JsonBackReference
     private List<Vehicule> vehicule;
 	
 	public Long getId() {
