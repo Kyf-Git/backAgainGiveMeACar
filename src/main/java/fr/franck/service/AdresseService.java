@@ -10,5 +10,5 @@ import fr.franck.model.Adresse;
 public interface AdresseService {
 
 	//Requete GET
-    List<Adresse> findAll(String search);
+    List<Adresse> findAllAdresse(String search);
 }

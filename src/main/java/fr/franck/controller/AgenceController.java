@@ -67,6 +67,7 @@ public class AgenceController {
         Agence updatedAgence = agenceService.updateAgence(id, agence);
         if(updatedAgence == null)
         	return ResponseEntity.notFound().build();
+        
         return ResponseEntity.ok().body(updatedAgence);
     }
     

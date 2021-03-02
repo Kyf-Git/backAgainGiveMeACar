@@ -17,7 +17,7 @@ public class AdresseServiceImpl implements AdresseService {
 	
 	//Requete GET
     @Override
-    public List<Adresse> findAll(String search) {
+    public List<Adresse> findAllAdresse(String search) {
         	return adresseRepository.findAll();
     }
 }

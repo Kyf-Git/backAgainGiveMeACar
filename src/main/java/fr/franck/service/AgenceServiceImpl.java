@@ -48,6 +48,8 @@ public class AgenceServiceImpl implements AgenceService {
     public Agence updateAgence(Long id, Agence agence) {
         Optional<Agence> optionalAgence = this.findById(id);
         if(optionalAgence.isPresent()){
+        	agence.setId(id);
+        	//agence.setAdresse(this.);
             return agenceRepository.save(agence);
         }
     return null;

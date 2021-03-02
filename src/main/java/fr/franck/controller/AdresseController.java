@@ -19,13 +19,13 @@ public class AdresseController {
 	@Autowired
 	AdresseService adresseService;
 
-    //Lister les agences.
+    //Lister les adresses des agences.
     @CrossOrigin
     @GetMapping("/adresses")
     public ResponseEntity<List<Adresse>> getAllAdresse(@RequestParam(value = "search", defaultValue = "")String search) {
     	List<Adresse> listAdresse;
     	try {
-    		listAdresse = adresseService.findAll(search);
+    		listAdresse = adresseService.findAllAdresse(search);
     	} catch (Exception e) {
     		return ResponseEntity.notFound().build();
     	}

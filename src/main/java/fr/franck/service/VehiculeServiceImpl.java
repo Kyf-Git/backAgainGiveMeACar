@@ -43,6 +43,7 @@ public class VehiculeServiceImpl implements VehiculeService{
 	public Vehicule update(Long id, Vehicule vehicule) {
 		Optional<Vehicule> optionalVehicule = this.findById(id);
 		if(optionalVehicule.isPresent()) {
+			vehicule.setId(id);
 			return vehiculeRepository.save(vehicule);
 		}
 		return null;
